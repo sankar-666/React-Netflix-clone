@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {action,commedy,documentry,horror,originals, romance} from './urls'
+import NavBar from './components/NavBar/NavBar';
+import Banner from './components/Banner/Banner';
+import RowPost from './components/RowPost/RowPost';
+// import { BrowserRouter as Router,Route,Routes ,Link} from 'react-router-dom';
+// import Login from './pages/Login/Login';
+// import Signup from './pages/SIgnup/Signup';
 
 function App() {
+
+  
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+     <NavBar/>
+     <Banner/>
+     <RowPost url={originals} title="Netflix Originals" />
+     {/* <RowPost url={horror} title="Netflix Originals" /> */}
+     <RowPost url={romance} title="Romance" isSmall />
+     <RowPost  url={action} title="Action" isSmall />
+     <RowPost url={commedy} title="Comedy" isSmall />
+     <RowPost  url={horror} title="Horror" isSmall />
+     <RowPost url={documentry} title="Documentary" isSmall />
+
+   
     </div>
   );
 }
